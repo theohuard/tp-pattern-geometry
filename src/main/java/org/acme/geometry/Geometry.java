@@ -7,4 +7,6 @@ public interface Geometry {
     public boolean isEmpty();
 
     public void translate(double xt, double yt);
+
+    public Geometry clone();
 }
