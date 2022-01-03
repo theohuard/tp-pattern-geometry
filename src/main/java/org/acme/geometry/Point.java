@@ -1,5 +1,6 @@
 package org.acme.geometry;
 
+
 public class Point implements Geometry {
     private Coordinate coordinate;
 
@@ -18,6 +19,14 @@ public class Point implements Geometry {
 
     public Coordinate getCoordinate() {
         return this.coordinate;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        if (coordinate.isEmpty()){
+            return true;
+        }
+        return false; 
     }
 
 }

@@ -18,6 +18,7 @@ public class LineString implements Geometry {
     }
 
     public LineString(List<Point> points){
+        assert (points != null);
         this.points=points;
     }
 
@@ -28,7 +29,15 @@ public class LineString implements Geometry {
     public Point getPointN(int n){
         return points.get(n);
     }
-    
+
+    @Override
+    public boolean isEmpty() {
+        if (points.isEmpty()){
+            return true;
+            }
+        return false;
+    }
+
 
 
     
