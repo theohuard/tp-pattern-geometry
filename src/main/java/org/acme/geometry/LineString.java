@@ -38,8 +38,19 @@ public class LineString implements Geometry {
         return false;
     }
 
+    @Override
+    public void translate(double xt, double yt) {
+        List<Point> nw_points =new ArrayList<Point>();
+        for ( Point point : points) {
+            Coordinate coord=point.getCoordinate();       
+            double x = coord.getX();
+            double y = coord.getY();
 
-
-    
-    
+            Coordinate coord2 = new Coordinate(x+xt, y+yt);
+            Point pt = new Point(coord2);
+            nw_points.add(pt);
+        }
+        this.points=nw_points;
+    }
+   
 }
