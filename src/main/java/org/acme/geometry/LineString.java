@@ -52,5 +52,10 @@ public class LineString implements Geometry {
         }
         this.points=nw_points;
     }
+
+    @Override
+    public Geometry clone(){
+        return new LineString(this.coordinate);
+    }
    
 }
