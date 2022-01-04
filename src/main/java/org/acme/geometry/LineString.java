@@ -22,7 +22,7 @@ public class LineString implements Geometry {
         this.points=points;
     }
 
-    public int getNumPOints(){
+    public int getNumPoints(){
         return points.size();
     }
 
