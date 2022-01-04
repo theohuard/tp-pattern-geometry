@@ -41,7 +41,8 @@ public class LineString implements Geometry {
     @Override
     public void translate(double xt, double yt) {
         List<Point> nw_points =new ArrayList<Point>();
-        for ( Point point : points) {
+
+        for ( Point point : this.points) {
             Coordinate coord=point.getCoordinate();       
             double x = coord.getX();
             double y = coord.getY();
@@ -50,6 +51,7 @@ public class LineString implements Geometry {
             Point pt = new Point(coord2);
             nw_points.add(pt);
         }
+
         this.points=nw_points;
     }
 
@@ -57,5 +59,18 @@ public class LineString implements Geometry {
     public Geometry clone(){
         return new LineString(this.points);
     }
+
+    @Override
+    public Envelope GetEnvelope() {
+
+        EnvelopeBuilder builder = new EnvelopeBuilder();
+        
+        for (Point point : points) {
+            builder.insert(point.getCoordinate());
+        }
+
+        return builder.build();
+    }
+    
    
 }
