@@ -7,7 +7,7 @@ public class Coordinate {
 	public Coordinate(){
 		this.x=Double.NaN;
 		this.y=Double.NaN;
-	}
+	} 
 	
 	public Coordinate(double x,double y){
 		this.x=x;

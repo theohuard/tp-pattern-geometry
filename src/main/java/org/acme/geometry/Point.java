@@ -30,6 +30,15 @@ public class Point implements Geometry {
     }
 
     @Override
+    public void translate(double xt, double yt) {
+        
+        double x = coordinate.getX();
+        double y = coordinate.getY();
+        Coordinate coord2 = new Coordinate(x+xt, y+yt);
+        this.coordinate=coord2;
+    }
+
+    @Override
     public Geometry clone(){
         return new Point(this.coordinate);
     }
