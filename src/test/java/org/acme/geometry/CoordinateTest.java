@@ -16,5 +16,14 @@ public class CoordinateTest {
 		Assert.assertTrue(c.isEmpty());
 	}
 	
+	@Test
+	public void testConstructor(){
+
+		Coordinate coord = new Coordinate(1.23, 4.56);
+		Assert.assertEquals(1.23, coord.getX(), EPSILON);
+		Assert.assertEquals(4.56, coord.getY(), EPSILON);
+
+		Assert.assertFalse(coord.isEmpty());
+	}
 
 }

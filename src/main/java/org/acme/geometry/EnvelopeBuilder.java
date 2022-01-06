@@ -8,10 +8,10 @@ public class EnvelopeBuilder {
 
 
     public EnvelopeBuilder(){
-        this.minX=Double.NaN;
-        this.minY=Double.NaN;
-        this.maxX=Double.NaN;
-        this.maxY=Double.NaN;
+        this.minX=0.0;
+        this.minY=0.0;
+        this.maxX=0.0;
+        this.maxY=0.0;
     }
 
 
@@ -19,7 +19,7 @@ public class EnvelopeBuilder {
 
         double x = coordinate.getX() ; double y = coordinate.getY();
 
-        if (minX == Double.NaN){
+        if (minX == 0.0){
             this.minX=x ; this.maxX=x ; 
             this.minY=y ; this.maxY=y ; 
         }

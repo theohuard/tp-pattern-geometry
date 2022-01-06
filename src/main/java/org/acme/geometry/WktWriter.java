@@ -6,6 +6,8 @@ public class WktWriter {
 
         if ( geometry instanceof Point ){
             Point point = (Point)geometry;
+            if (point.isEmpty()){ return "X";}
+
             String x=Double.toString(point.getCoordinate().getX());
             String y=Double.toString(point.getCoordinate().getY());
 
@@ -13,6 +15,7 @@ public class WktWriter {
 
         }else if ( geometry instanceof LineString ){
             LineString lineString = (LineString)geometry;
+            if (lineString.isEmpty()){ return "X";}
             
             String wkt = "LINESTRING(";
             for (int i = 0; i < lineString.getNumPoints(); i++){
