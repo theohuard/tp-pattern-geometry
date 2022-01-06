@@ -50,4 +50,10 @@ public class Point implements Geometry {
         builder.insert(this.coordinate);
         return builder.build();
     }
+
+    @Override
+    public void accept(GeometryVisitor visitor) {
+        visitor.visit(this);
+    }
+    
 }
