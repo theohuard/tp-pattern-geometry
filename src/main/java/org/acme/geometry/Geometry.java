@@ -14,4 +14,6 @@ public interface Geometry {
 
     public void accept(GeometryVisitor visitor);
 
+    public void addListener(GeometryListener listener);
+
 }

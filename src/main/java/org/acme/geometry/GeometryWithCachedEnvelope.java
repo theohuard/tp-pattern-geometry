@@ -45,4 +45,9 @@ public class GeometryWithCachedEnvelope implements Geometry{
     public void accept(GeometryVisitor visitor) {
         original.accept(visitor);        
     }
+
+    @Override
+    public void addListener(GeometryListener listener) {
+        original.addListener(listener);
+    }
 }

@@ -5,6 +5,8 @@ import org.junit.Test;
 
 public class GeometryWithCachedEnvelopeTest {
 
+    public static final double EPSILON = 1.0e-15;
+
     @Test
     public void testCachedEnvelope() {
 
@@ -15,4 +17,6 @@ public class GeometryWithCachedEnvelopeTest {
         Envelope b = g.getEnvelope() ; // renvoi de cachedEnvelope
         Assert.assertSame(a,b);
     }
+
+   
 }

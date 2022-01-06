@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class LineString implements Geometry {
+public class LineString extends AbstractGeometry {
     
     private List<Point> points =new ArrayList<Point>();
 
@@ -53,6 +53,7 @@ public class LineString implements Geometry {
         }
 
         this.points=nw_points;
+        this.triggerChange();
     }
 
     @Override
